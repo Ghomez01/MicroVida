@@ -1,99 +1,86 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image  } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen({ navigation }) {
   return (
-    <ImageBackground
-      source={require('./assets/fundo.png')}
-      style={styles.background}
-      resizeMode="cover"
-    >
-      <View style={styles.container}>
+    <View style={styles.container}>
 
-        <Text style={styles.title}>MicroVida</Text>
+      <LinearGradient
+        colors={['#8E44AD', '#D94FCF']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}
+        style={styles.topo}
+      >
+      </LinearGradient>
 
-        <View style={styles.abaixo}>
- 
-          <View style={styles.imagem}>
-            <Image 
-              source={require('./assets/celulaInicio.png')} 
-              style={styles.img} 
-              resizeMode="contain"
-            />
+      <Image 
+        source={require('./assets/Nome.png')} 
+        style={styles.imagem}
+      />
+
+      <View style={styles.botoesDiv}>
+        <TouchableOpacity onPress={() => navigation.navigate('Desenvolvedores')}>
+          <View style={styles.CaixaText}>
+            <Text style={styles.buttonText}>Jogar</Text>
           </View>
+        </TouchableOpacity>
 
-          <View style={styles.rightSide}>
-
-            <TouchableOpacity>
-              <Text style={styles.buttonText}>Começar</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity>
-              <Text style={styles.buttonText}>Opções</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => navigation.navigate('Desenvolvedores')}>
-              <Text style={styles.buttonText}>Desenvolvedores</Text>
-            </TouchableOpacity>
-
+        <TouchableOpacity>
+          <View style={styles.CaixaText}>
+            <Text style={styles.buttonText}>Como funciona?</Text>
           </View>
-
-        </View>
-
+        </TouchableOpacity>
       </View>
-    </ImageBackground>
+
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    width: '100%', 
-    height: '100%',
-  },
-
   container: {
     flex: 1,
-    overflow: 'hidden', 
-  },
-
-  abaixo: {
-    flex: 1,
-    flexDirection: 'row', 
+    backgroundColor: '#e3d9ff',
+    alignItems: 'center',
   },
 
   imagem: {
-    flex: 1,
+  width: 250,
+  height: 250,
+  resizeMode: 'contain', // mantém proporção
+},
+
+  topo: {
+    width: '100%',
+    height: 80,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
   },
 
-  img: {
-    width: '200%',  
-    height: '80%',
-    marginLeft: 150
-  },
-
-  rightSide: {
-    flex: 1,
-    justifyContent: 'center',
-    gap: 35,
-    marginRight: 20,
-    marginTop: 15
-
-  },
-
   title: {
-    fontSize: 35,
+    fontSize: 32,
     color: '#fff',
     fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 50,
+  },
+
+  botoesDiv: {
+    width: '80%',
+    gap: 20,
   },
 
   buttonText: {
     color: '#fff',
     fontSize: 21,
     fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  CaixaText: {
+    backgroundColor: '#B93CC3',
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
   },
 });
