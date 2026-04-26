@@ -44,7 +44,6 @@ export default function DevsScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       
-      {/* HEADER (igual ao jogo) */}
       <LinearGradient 
         colors={['#52C370', '#43929F']} 
         style={styles.header}
@@ -61,7 +60,6 @@ export default function DevsScreen({ navigation }) {
         <Text style={styles.headerTitle}>Desenvolvedores</Text>
       </LinearGradient>
 
-      {/* LISTA DE DEVS */}
       <ScrollView contentContainerStyle={styles.lista}>
         {devs.map((dev, index) => (
           <View key={index} style={styles.card}>

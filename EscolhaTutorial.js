@@ -20,7 +20,7 @@ export default function EscolhaTutorial({ navigation }) {
 
       <View style={styles.botoesContainer}>
 
-        {/* BOTÃO SIM */}
+      
         <TouchableOpacity 
           style={[styles.botao, styles.sim]}
           onPress={irParaTutorial}
@@ -28,7 +28,7 @@ export default function EscolhaTutorial({ navigation }) {
           <Text style={styles.textoBotao}>Sim</Text>
         </TouchableOpacity>
 
-        {/* BOTÃO NÃO */}
+       
         <TouchableOpacity 
           style={[styles.botao, styles.nao]}
           onPress={() => navigation.navigate('Escolha')}

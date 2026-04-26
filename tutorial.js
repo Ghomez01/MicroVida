@@ -15,7 +15,6 @@ export default function TutorialScreen({ navigation, route }) {
   return (
     <SafeAreaView style={styles.container}>
       
-      {/* HEADER IGUAL AO JOGO */}
       <LinearGradient 
         colors={['#52C370', '#43929F']} 
         style={styles.header}
@@ -23,10 +22,8 @@ export default function TutorialScreen({ navigation, route }) {
         <Text style={styles.tituloHeader}>Tutorial</Text>
       </LinearGradient>
 
-      {/* CONTEÚDO */}
       <ScrollView contentContainerStyle={styles.scroll}>
 
-        {/* BLOCO 1 */}
         <View style={styles.card}>
           <Image 
             source={require('./assets/tutorial1.png')} 
@@ -37,7 +34,6 @@ export default function TutorialScreen({ navigation, route }) {
           </Text>
         </View>
 
-        {/* BLOCO 2 */}
         <View style={styles.card}>
           <Image 
             source={require('./assets/tutorial2.png')} 
@@ -48,7 +44,6 @@ export default function TutorialScreen({ navigation, route }) {
           </Text>
         </View>
 
-        {/* BLOCO 3 */}
         <View style={styles.card}>
           <Image 
             source={require('./assets/tutorial3.png')} 
@@ -59,7 +54,6 @@ export default function TutorialScreen({ navigation, route }) {
           </Text>
         </View>
 
-        {/* BLOCO 4 */}
 <View style={styles.card}>
   <Image 
     source={require('./assets/tutorial4.png')} 
@@ -70,7 +64,6 @@ export default function TutorialScreen({ navigation, route }) {
   </Text>
 </View>
 
-{/* BLOCO 5 */}
 <View style={styles.card}>
   <Image 
     source={require('./assets/tutorial6.png')} 
@@ -81,7 +74,6 @@ export default function TutorialScreen({ navigation, route }) {
   </Text>
 </View>
 
-{/* BLOCO 6 */}
 <View style={styles.card}>
   <Image 
     source={require('./assets/tutorial5.png')} 
@@ -94,7 +86,6 @@ export default function TutorialScreen({ navigation, route }) {
 
       </ScrollView>
 
-      {/* BOTÃO CONTINUAR */}
       <View style={styles.footer}>
         <TouchableOpacity style={styles.botao}  onPress={() => navigation.navigate('Escolha')}>
           <LinearGradient 
