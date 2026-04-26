@@ -1,15 +1,21 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image  } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useFonts } from 'expo-font';
 
 export default function HomeScreen({ navigation }) {
+  //carregando
+  const [fontsLoaded] = useFonts({
+    'Urban Constructed-Regular': require('./assets/fonts/UrbanConstructed-Regular.ttf'), 
+  });
   return (
     <View style={styles.container}>
 
       <LinearGradient
-        colors={['#8E44AD', '#D94FCF']}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
+        colors={['#C93BC3', '#8C64B3']}
+        locations={[0, 0.9]}
+        start={{ x: 0.5, y: 0 }}
+        end={{ x: 0.5, y: 1 }}
         style={styles.topo}
       >
       </LinearGradient>
@@ -20,17 +26,12 @@ export default function HomeScreen({ navigation }) {
       />
 
       <View style={styles.botoesDiv}>
-        <TouchableOpacity onPress={() => navigation.navigate('Desenvolvedores')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Escolha-Tutorial')}>
           <View style={styles.CaixaText}>
             <Text style={styles.buttonText}>Jogar</Text>
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity>
-          <View style={styles.CaixaText}>
-            <Text style={styles.buttonText}>Como funciona?</Text>
-          </View>
-        </TouchableOpacity>
       </View>
 
     </View>
@@ -40,7 +41,7 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e3d9ff',
+    backgroundColor: '#EBE5FF',
     alignItems: 'center',
   },
 
@@ -57,7 +58,23 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
+
+    // --- PROPRIEDADES DE SOMBRA ---
+    
+    // Para Android
+    elevation: 8, 
+    
+    // Para iOS
+    shadowColor: '#ADA2D2',
+    shadowOffset: { width: 0, height: 4 }, 
+    shadowOpacity: 0.9, 
+    shadowRadius: 5, 
+    
+   
+    backgroundColor: '#C93BC3', 
   },
+
+  
 
   title: {
     fontSize: 32,
@@ -73,14 +90,23 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 21,
-    fontWeight: 'bold',
     textAlign: 'center',
+    fontFamily: 'Urban Constructed-Regular',
+    
   },
 
   CaixaText: {
-    backgroundColor: '#B93CC3',
-    padding: 15,
+    backgroundColor: '#C93BC3',
+    padding: 25,
     borderRadius: 10,
     alignItems: 'center',
+  
+    shadowColor: '#ADA2D2',
+    shadowOffset: { width: 0, height: 4 }, 
+    shadowOpacity: 0.9, 
+    shadowRadius: 5, 
+    
+   
+    backgroundColor: '#C93BC3', 
   },
 });
