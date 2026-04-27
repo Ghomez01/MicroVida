@@ -4,10 +4,14 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useFonts } from 'expo-font';
 
 export default function HomeScreen({ navigation }) {
-  //carregando
+  
   const [fontsLoaded] = useFonts({
     'Urban Constructed-Regular': require('./assets/fonts/UrbanConstructed-Regular.ttf'), 
   });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
 
@@ -91,6 +95,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 21,
     textAlign: 'center',
+    width: '100%',
     fontFamily: 'Urban Constructed-Regular',
     
   },
@@ -107,6 +112,5 @@ const styles = StyleSheet.create({
     shadowRadius: 5, 
     
    
-    backgroundColor: '#C93BC3', 
   },
 });

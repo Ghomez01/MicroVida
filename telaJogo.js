@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, SafeAreaView, Dimensions, Modal, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image, Dimensions, Modal, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient'; // 👈 IMPORTANTE: Novo import aqui
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Importe suas perguntas.
 import { perguntasJogo } from './perguntas'; 
@@ -126,7 +127,7 @@ const tipoCelula = route?.params?.tipoCelula || 'animal';
 
         {/* 👈 SUBSTITUÍDO: Histórico com Degradê Branco translúcido (efeito vidro/glassmorphism) */}
         <LinearGradient 
-          colors={['#EBE5FF)', '#EBE5FF']} 
+          colors={['#EBE5FF', '#EBE5FF']}
           style={styles.historicoContainer}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
