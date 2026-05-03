@@ -8,11 +8,13 @@ import EscolhaScreen from './EscolhaScreen';
 import EscolhaTutorial from './EscolhaTutorial';
 import TutorialScreen from './tutorial';
 import DrawerRoutes from './DrawerRoutes'; 
+import { MusicProvider } from './MusicContext';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+        <MusicProvider>
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
@@ -27,5 +29,7 @@ export default function App() {
 
       </Stack.Navigator>
     </NavigationContainer>
+        </MusicProvider>
+
   );
 }
