@@ -23,7 +23,7 @@ export default function DevsScreen({ navigation }) {
       foto: require('./assets/dev3.jpeg')
     },
     {
-      nome: 'Metheus Santana',
+      nome: 'Matheus Santana',
       email: 'Matheus@gmail.com',
       foto: require('./assets/dev4.jpeg')
     },

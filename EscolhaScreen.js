@@ -17,7 +17,7 @@ function escolherCelula(tipo) {
       <View style={styles.overlay} />
 
       <Text style={styles.titulo}>
-        Qual tipo de celular você deseja começar?
+        Qual tipo de celula você deseja começar?
       </Text>
 
       <TouchableOpacity 
