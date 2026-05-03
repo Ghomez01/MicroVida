@@ -3,9 +3,10 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 export default function EscolhaScreen({ navigation }) {
 
+// Dentro de EscolhaScreen.js
 function escolherCelula(tipo) {
   navigation.navigate('Jogo', {
-    screen: 'telaJogo',
+    screen: 'Jogo Atual', // <--- O nome deve ser igual ao 'name' no Drawer.Screen
     params: { tipoCelula: tipo }
   });
 }
